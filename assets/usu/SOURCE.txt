@@ -1,0 +1,12 @@
+USU logo files used in this demo
+
+u-state-logo.svg     https://www.usu.edu/assets/bs4/images/logos/u-state-logo.svg
+utah-state-logo.svg  https://www.usu.edu/assets/bs4/images/logos/utah-state-logo.svg
+
+Downloaded 2026-11-10 from the public usu.edu site (the logos shown on
+https://www.usu.edu/brand/standards/logos/logos-and-wordmarks).
+Both files are white, so they are placed on USU navy backgrounds.
+The files are not edited. Do not recolor, stretch, crop or redraw them.
+
+Internal demo only. Before any public use, get approved files from the
+USU Logo Library and approval from University Marketing and Communications.

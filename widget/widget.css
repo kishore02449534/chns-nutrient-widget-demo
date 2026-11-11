@@ -1,0 +1,208 @@
+/* CHNS nutrient widget styles. Everything is prefixed with "chns-" to avoid clashing with the host page. */
+
+.chns-root {
+  --chns-navy: #0f2439;
+  --chns-navy-2: #1d3a5c;
+  --chns-blue-soft: #e8eef6;
+  --chns-ink: #1b2430;
+  --chns-muted: #5b6675;
+  --chns-line: #e3e7ec;
+  --chns-soft: #f5f7fa;
+  --chns-warn-bg: #fff4d6;
+  --chns-warn-ink: #6b4b00;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--chns-ink);
+  line-height: 1.45;
+}
+.chns-root *, .chns-root *::before, .chns-root *::after { box-sizing: border-box; }
+.chns-visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Badge */
+.chns-badge {
+  display: flex; align-items: stretch; width: 100%; max-width: 520px; padding: 0;
+  background: #fff; border: 1px solid var(--chns-line); border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(15, 36, 57, .07); overflow: hidden;
+  font: inherit; color: inherit; text-align: left; cursor: pointer;
+  transition: box-shadow .15s, border-color .15s;
+}
+.chns-badge:hover { box-shadow: 0 6px 20px rgba(15, 36, 57, .14); border-color: #c9d3df; }
+.chns-badge:focus-visible { outline: 3px solid #4c8fd6; outline-offset: 2px; }
+.chns-badge-mark {
+  flex: none; width: 76px; background: var(--chns-navy);
+  display: flex; align-items: center; justify-content: center; padding: 12px;
+}
+.chns-badge-mark img { width: 46px; height: auto; display: block; }
+.chns-badge-text { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 12px 16px; min-width: 0; }
+.chns-badge-line1 { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 16px; color: var(--chns-ink); }
+.chns-badge-line2 { font-size: 15px; color: var(--chns-muted); }
+.chns-badge:hover .chns-badge-line2 { color: var(--chns-navy); }
+.chns-pill {
+  font-size: 13px; font-weight: 600; background: var(--chns-blue-soft); color: var(--chns-navy);
+  border-radius: 5px; padding: 1px 7px;
+}
+.chns-demo-tag {
+  font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+  color: var(--chns-warn-ink); background: var(--chns-warn-bg); border-radius: 4px; padding: 1px 6px;
+}
+
+/* Dialog */
+.chns-overlay {
+  position: fixed; inset: 0; z-index: 2147483000;
+  background: rgba(10, 20, 32, .55);
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.chns-overlay[hidden] { display: none; }
+.chns-dialog {
+  background: #fff; width: 100%; max-width: 780px; max-height: calc(100vh - 48px);
+  border-radius: 14px; box-shadow: 0 24px 64px rgba(0, 0, 0, .3);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.chns-dialog:focus { outline: none; }
+body.chns-scroll-lock { overflow: hidden; }
+
+/* USU logo files are white, so they only go on navy. Size them by width only so the
+   proportions never change (USU brand rule). */
+.chns-header {
+  display: grid; grid-template-columns: 44px 1fr 44px; align-items: center; gap: 12px;
+  padding: 14px 18px; background: var(--chns-navy); color: #fff;
+}
+.chns-brand { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+.chns-wordmark { width: 220px; max-width: 100%; height: auto; display: block; }
+.chns-brand-sub { font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; opacity: .9; text-align: center; }
+.chns-close {
+  width: 44px; height: 44px; border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, .45); background: transparent; color: #fff;
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+.chns-close:hover { background: rgba(255, 255, 255, .12); }
+.chns-close:focus-visible { outline: 3px solid #9cc7f5; outline-offset: 2px; }
+
+.chns-demo-banner {
+  background: var(--chns-warn-bg); color: var(--chns-warn-ink);
+  border-bottom: 1px solid #f0d98a; padding: 8px 20px;
+  font-size: 13px; font-weight: 700; text-align: center; letter-spacing: .02em;
+}
+
+.chns-body { overflow-y: auto; padding: 26px 28px 28px; overscroll-behavior: contain; }
+
+.chns-title { margin: 0; text-align: center; font-size: 30px; line-height: 1.2; color: var(--chns-ink); }
+.chns-subtitle { margin: 6px 0 0; text-align: center; font-size: 14px; color: var(--chns-muted); }
+.chns-intro { max-width: 560px; margin: 14px auto 20px; text-align: center; font-size: 16px; color: var(--chns-ink); }
+
+.chns-select-wrap { position: relative; margin-bottom: 18px; }
+.chns-select {
+  width: 100%; appearance: none; -webkit-appearance: none;
+  font: inherit; font-size: 17px; font-weight: 600; text-align: center; text-align-last: center;
+  color: var(--chns-ink); background: #fff; border: 1px solid #cfd6df; border-radius: 10px;
+  padding: 12px 40px; min-height: 50px; cursor: pointer;
+}
+.chns-select-wrap::after {
+  content: ""; position: absolute; right: 18px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+  border-right: 2px solid var(--chns-muted); border-bottom: 2px solid var(--chns-muted);
+  transform: rotate(45deg); pointer-events: none;
+}
+.chns-select:focus-visible, .chns-search:focus-visible { outline: 3px solid #4c8fd6; outline-offset: 1px; }
+
+/* Category buttons */
+.chns-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 16px; }
+.chns-tab {
+  font: inherit; font-size: 16px; font-weight: 500; cursor: pointer;
+  border: 2px solid transparent; background: #eef1f5; color: var(--chns-ink);
+  border-radius: 999px; padding: 9px 20px; min-height: 44px;
+}
+.chns-tab:hover { background: #e3e8ef; }
+.chns-tab[aria-pressed="true"] { background: var(--chns-blue-soft); border-color: var(--chns-navy-2); color: var(--chns-navy); font-weight: 600; }
+.chns-tab:focus-visible { outline: 3px solid #4c8fd6; outline-offset: 2px; }
+
+/* Results */
+.chns-panel { border: 1px solid var(--chns-line); border-radius: 12px; padding: 18px; }
+.chns-help { background: var(--chns-soft); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+.chns-help-title { font-size: 12.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--chns-navy); }
+.chns-help p { margin: 6px 0 0; font-size: 15px; }
+
+.chns-search-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.chns-search-wrap { position: relative; flex: 1 1 auto; min-width: 0; }
+.chns-search {
+  width: 100%; font: inherit; font-size: 15px; color: var(--chns-ink);
+  border: 1px solid #cfd6df; border-radius: 8px; background: #fff;
+  padding: 8px 38px 8px 12px; min-height: 42px;
+}
+.chns-search::-webkit-search-cancel-button { display: none; }
+.chns-clear {
+  position: absolute; right: 5px; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px; border: 0; background: transparent; cursor: pointer;
+  color: var(--chns-muted); font-size: 16px; border-radius: 6px;
+}
+.chns-clear:hover { background: var(--chns-soft); }
+.chns-clear:focus-visible { outline: 3px solid #4c8fd6; }
+.chns-reset {
+  flex: none; font: inherit; font-size: 14px; border: 1px solid #cfd6df; background: #fff; color: var(--chns-navy-2);
+  border-radius: 8px; padding: 8px 14px; min-height: 42px; cursor: pointer;
+}
+.chns-reset:hover { background: var(--chns-soft); }
+.chns-reset:focus-visible { outline: 3px solid #4c8fd6; outline-offset: 1px; }
+.chns-count { font-size: 13px; color: var(--chns-muted); margin: 4px 0 6px; }
+
+.chns-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.chns-table th {
+  text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--chns-muted); padding: 8px 4px; border-bottom: 1px solid var(--chns-line);
+}
+.chns-table td { padding: 13px 4px; border-bottom: 1px solid var(--chns-line); vertical-align: middle; }
+.chns-table tbody tr:last-child td { border-bottom: 0; }
+.chns-table .chns-num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; padding-right: 8px; }
+.chns-table .chns-unit { width: 56px; color: var(--chns-muted); }
+.chns-cat-tag { display: block; font-size: 12px; color: var(--chns-muted); margin-top: 1px; }
+
+.chns-empty {
+  border: 1px dashed #c4ccd6; border-radius: 10px; padding: 22px; text-align: center; color: var(--chns-muted);
+}
+.chns-empty strong { color: var(--chns-ink); display: block; margin-bottom: 4px; }
+.chns-empty button { margin-top: 10px; }
+
+/* Info and approval */
+.chns-info { margin-top: 18px; background: var(--chns-soft); border-radius: 12px; padding: 16px 18px; font-size: 14.5px; }
+.chns-info h3, .chns-approval h3 { margin: 0 0 8px; font-size: 16px; color: var(--chns-navy); }
+.chns-info ul { margin: 0; padding-left: 18px; }
+.chns-info li { margin: 4px 0; }
+
+.chns-approval {
+  margin-top: 16px; border: 1px solid var(--chns-line); border-top: 3px solid var(--chns-navy);
+  border-radius: 12px; padding: 16px 18px; font-size: 14.5px;
+}
+.chns-approval dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0 0 14px; }
+.chns-approval dt { color: var(--chns-muted); }
+.chns-approval dd { margin: 0; font-weight: 600; }
+.chns-status { color: var(--chns-warn-ink); background: var(--chns-warn-bg); border-radius: 4px; padding: 0 6px; }
+.chns-signature {
+  border: 1.5px dashed #9aa7b6; border-radius: 8px; height: 72px;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  color: var(--chns-muted); font-size: 13px; padding: 8px;
+}
+.chns-sig-label { font-size: 12px; color: var(--chns-muted); margin-top: 6px; }
+
+/* Phones */
+@media (max-width: 560px) {
+  .chns-overlay { padding: 0; align-items: stretch; }
+  .chns-dialog { max-width: none; max-height: none; height: 100%; border-radius: 0; }
+  .chns-header { padding: 10px 12px; grid-template-columns: 40px 1fr 40px; }
+  .chns-close { width: 40px; height: 40px; }
+  .chns-wordmark { width: 170px; }
+  .chns-brand-sub { font-size: 10.5px; }
+  .chns-body { padding: 20px 14px 22px; }
+  .chns-title { font-size: 24px; }
+  .chns-intro { font-size: 15px; }
+  .chns-tabs { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; margin: 0 -14px 16px; padding: 0 14px 4px; }
+  .chns-tab { flex: none; font-size: 15px; padding: 8px 16px; }
+  .chns-panel { padding: 12px; }
+  .chns-table { font-size: 15px; }
+  .chns-approval dl { grid-template-columns: 1fr; gap: 0; }
+  .chns-approval dd { margin-bottom: 6px; }
+  .chns-badge-mark { width: 64px; }
+  .chns-badge-mark img { width: 40px; }
+  .chns-badge-line1 { font-size: 15px; }
+  .chns-badge-line2 { font-size: 14px; }
+}

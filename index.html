@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Example Farm Co. (demo client page)</title>
+  <link rel="stylesheet" href="widget/widget.css">
+  <style>
+    /* Pretend shop page only. Not part of the widget. */
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: #faf7f2; color: #2b2b2b; }
+    .notice { background: #2b2b2b; color: #fff; font: 13px/1.4 -apple-system, sans-serif; text-align: center; padding: 6px 12px; }
+    header { padding: 18px 24px; border-bottom: 1px solid #e6dfd3; background: #fff; }
+    header strong { font-size: 20px; }
+    main { max-width: 980px; margin: 0 auto; padding: 24px 16px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+    .photo { aspect-ratio: 4/3; background: repeating-linear-gradient(45deg, #ede4d6, #ede4d6 12px, #e5dac9 12px, #e5dac9 24px);
+             border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #8a7a62; font-style: italic; }
+    h1 { margin: 0 0 6px; font-size: 26px; }
+    .price { font-size: 20px; margin: 4px 0 14px; }
+    .buy { background: #6b3e26; color: #fff; border: 0; border-radius: 6px; padding: 12px 18px; font-size: 16px; margin: 14px 0 20px; }
+    .switch { margin-top: 24px; font: 14px -apple-system, sans-serif; }
+    @media (max-width: 760px) { main { grid-template-columns: minmax(0, 1fr); } }
+  </style>
+</head>
+<body>
+  <div class="notice">Pretend client web page for testing the CHNS widget. All products and data are fictional.</div>
+  <header><strong>Example Farm Co.</strong> <span>(fictional)</span></header>
+
+  <main>
+    <div class="photo">Product photo placeholder</div>
+    <div>
+      <h1>Ground Beef, 1 lb</h1>
+      <div class="price">$0.00 (demo)</div>
+      <p>A pretend product listing. The card below is the CHNS widget a client would add to their page.</p>
+      <button class="buy" type="button">Add to cart (does nothing)</button>
+
+      <!-- CHNS widget -->
+      <div data-chns-widget data-product-id="demo-beef"></div>
+
+      <div class="switch">
+        <p>Second card (a different product) to show the widget is product specific:</p>
+        <div data-chns-widget data-product-id="demo-eggs"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="widget/demo-data.js"></script>
+  <script src="widget/widget.js"></script>
+</body>
+</html>
